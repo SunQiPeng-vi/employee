@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ssm.employee.dao.MasterMapper">
+	
+	<select id="getMastersBycategoryCode" resultType="master">
+		SELECT cd_master_m.CATEGORY_CODE,cd_master_m.`CODE`,cd_master_m.DELETE_FLAG,
+       			cd_master_m.DESCRIPTION, cd_master_m.DISPLAY_ORDER, cd_master_m.INS_TIMESTAMP,
+       			cd_master_m.INS_USER_ID, cd_master_m.`NAME`, cd_master_m.UPD_TIMESTAMP,cd_master_m.UPD_USER_ID
+        FROM cd_master_m where CATEGORY_CODE = #{ccode} 
+	</select>
+</mapper>

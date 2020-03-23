@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ssm.employee.dao.CertificationInfoMapper">
+	
+	<resultMap type="CertificationInfo" id="certificationMap" autoMapping="true">
+		<result column="CERTIFICATION_CODE" property="certification.code"/>
+		<result column="cerName" property="certification.name"/>
+
+		
+	</resultMap>
+	<select id="getCertificationInfoByEid" resultMap="certificationMap" >
+	SELECT EID,CERTIFICATION_CODE,ce.name cerName,CERTIFIED_DATE,
+		INS_USER_ID,INS_TIMESTAMP,UPD_USER_ID,UPD_TIMESTAMP
+		FROM emp_certification_info c
+		INNER JOIN (SELECT CATEGORY_CODE,CODE,NAME FROM cd_master_m WHERE CATEGORY_CODE='1060') ce ON ce.code = c.CERTIFICATION_CODE
+		WHERE eid = #{eid}
+	</select>
+</mapper>

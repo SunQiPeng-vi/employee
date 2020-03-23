@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ssm.employee.dao.SkillInfoMapper">
+	<resultMap type="SkillInfo" id="skillMap" autoMapping="true">
+		<result column="SKILL_CODE" property="skill.code"/>
+		<result column="skillname" property="skill.name"/>
+		<result column="SKILL_LEVEL" property="skillLevel.code"/>
+		<result column="levname" property="skillLevel.name"/>
+
+	</resultMap>
+	<select id="getSkillsByEid" resultMap="skillMap">
+		SELECT EID,SKILL_CODE,sk.name skillname,SKILL_LEVEL,sklev.name levname,
+		INS_USER_ID,INS_TIMESTAMP,UPD_USER_ID,UPD_TIMESTAMP
+		FROM emp_skill_info s
+		INNER JOIN (SELECT CATEGORY_CODE,CODE,NAME FROM cd_master_m WHERE CATEGORY_CODE='1100') sk ON sk.code = s.SKILL_CODE
+		INNER JOIN (SELECT CATEGORY_CODE,CODE,NAME FROM cd_master_m WHERE CATEGORY_CODE='1110') sklev ON sklev.code = s.SKILL_LEVEL
+		WHERE eid = #{eid}
+	</select>
+</mapper>

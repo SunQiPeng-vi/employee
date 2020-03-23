@@ -1,0 +1,201 @@
+
+.string
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size:8pt;
+	color : #000000;
+}
+.string_must_input
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size:8pt;
+	background-color:#FFFF00;
+	color : #000000;
+}
+.string_input_error
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size:8pt;
+	background-color:#FF0000;
+	color : #000000;
+
+}
+.table_border
+{
+    width:  970px;
+    BORDER-TOP: #0033CC 1px solid;
+    BORDER-LEFT: #0033CC 1px solid;
+    BORDER-RIGHT: #0033CC 1px solid;
+    BORDER-BOTTOM: #0033CC 1px solid;
+}
+.table_border_nowidth
+{
+    BORDER-TOP: #0033CC 1px solid;
+    BORDER-LEFT: #0033CC 1px solid;
+    BORDER-RIGHT: #0033CC 1px solid;
+    BORDER-BOTTOM: #0033CC 1px solid;
+}
+
+.txt_normal
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size:8pt;
+    color:#000000;
+}
+.txt_table_head
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size:8pt;
+    color:#FFFFFF;
+}
+.txt_error_message
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size: 8pt;
+    color: #FF0000;
+}
+.txt_href
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size:8pt;
+    color:#0000FF;
+}
+.div_error_message {
+
+	OVERFLOW-Y: auto; 
+	OVERFLOW-X: auto;
+}
+.div_screen {
+	width: 994px;
+	OVERFLOW-Y: auto; 
+	OVERFLOW-X: auto;
+}
+.div_naviarea {
+	width: 210px;
+}
+.div_workarea {
+	width: 750px;
+	OVERFLOW-Y: auto; 
+	OVERFLOW-X: auto;
+}
+.div_workarea_wide {
+	width: 970px;
+	OVERFLOW-Y: auto; 
+	OVERFLOW-X: auto;
+}
+.div_workarea_low{
+	height: 450px;
+	width: 750px;
+	OVERFLOW-Y: auto; 
+	OVERFLOW-X: auto;
+}
+.div_scrop {
+	width: 530px;
+	overflow: auto;
+}
+
+
+.menuBranch {
+	font-size: 14px; 
+	color: #000099; 
+}
+.menuItem {
+	font-size: 12px; 
+	color: #000099; 
+}
+.titleCenter {
+	font-size: 30px; 
+	color: #FFFFFF; 
+}
+.titleLeft {
+	font-size: 20px; 
+	color: #FFFFFF; 
+}
+.titleJDDC {
+	font-size: 12px; 
+	color: #FFFFFF; 
+}
+.mustInputStar {
+	font-size: 20px; 
+	color: #FF0000; 
+}
+.trEven {
+ background-color:#D3E2F4;
+}
+.trOdd {
+ background-color:#F0F0F0;
+}
+.trHeader {
+ background-color:#3C61F7;
+}
+
+.tdLabel {
+ background-color:#BECEFE;
+}
+.tdFuncTitle {
+ color: #FFFFFF; 
+ font-size: 11px;
+ background-color:#000066;
+}
+.imgCursor{
+	cursor: hand;
+}
+.div_workarea_searchdetail {
+	width: 750px;
+	OVERFLOW-Y: hidden;
+	OVERFLOW-X: scroll;
+}
+.string_selectbox_1
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size:8pt;
+    color:#000000;
+	width:135px;
+}
+.string_selectbox_3
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size:8pt;
+    color:#000000;
+	width:130px;
+}
+.string_must_input_width_specified
+{
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size:8pt;
+	background-color:#FFFF00;
+	color : #000000;
+	width:135px;
+}
+
+/* add 2007/07/07 */
+.ime_mode
+{
+	ime-mode:disabled;
+}
+
+/* add 2007/07/09 */
+.txt_String_red  {
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size: 8pt;
+    color: red;	
+}
+
+/* add for luoxin */
+.string_logon	{
+	color: #FFFFFF;
+	font-size: 24px;
+}
+.string_txt_eid	{color:	#000000}
+
+.td_logon{ background-color: #CCCCFF}
+.td_logon_log{ background-color: #666666}
+.string_welcome {
+	font-size: 60px;
+	color: #0000CC;
+}
+
+.JIMSHeadLayout01Table01{ background-color: "#003366" }
+.JIMSHeadLayout01Table02{ background-color: "#FFFFFF" }
+.JIMSHeadLayout01Tr01{background-color : "#85B7FA" }
+.MenuTd01{background-color : #808080 }

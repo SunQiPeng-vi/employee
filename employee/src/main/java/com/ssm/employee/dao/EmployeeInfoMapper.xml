@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ssm.employee.dao.EmployeeInfoMapper">
+	<resultMap type="employeeInfo" id="employeeMap" autoMapping="true">
+		<result column="managerName" property="managerName"/>
+		<result column="LOCATION_CODE" property="location.code"/>
+		<result column="locName" property="location.name"/>
+		<result column="SITE_CODE" property="site.code"/>	
+		<result column="siteName" property="site.name"/>		
+		<result column="WORK_STATUS" property="work.code"/>
+		<result column="workName" property="work.name"/>
+		<result column="DEPARTMENT_ID" property="department.id"/>
+		<result column="departmentName" property="department.name"/>
+		<result column="TYPE" property="type.code"/>
+		<result column="typeName" property="type.name"/>
+		<result column="COMPANY_ID" property="company.id"/>
+		<result column="companyName" property="company.name"/>
+		<result column="VISA_TYPE" property="visaType.code"/>
+		<result column="visaName" property="visaType.name"/>
+		<result column="JAPANESE_LEVEL" property="japanLevel.code"/>
+		<result column="japaneseLevel" property="japanLevel.name"/>
+		<result column="ROLE_CODE" property="role.role.code"/>
+		<result column="roleName" property="role.role.name"/>
+		<result column="YEARS_AT_JAPAN" property="yearsAtJanpan"/>
+	</resultMap>
+	<select id="findEmps" resultMap="employeeMap">
+select  DISTINCT e.EID,e.MAIL_ADDRESS,e.NAME,e.NAME_CN,e.NAME_KANJI,e.NAME_KANA,e.ENGLISH_NAME,e.BIRTHDAY,e.GENDER,
+e.TEL_NO,e.MOBILE_NO,e.EMERGENCY_TEL_NO,e.LOCATION_CODE,l.`NAME` locName,e.SITE_CODE,s.`NAME` siteName,e.START_DATE,e.END_DATE,e.WORK_STATUS,w.`NAME` workName,
+e.DEPARTMENT_ID,d.`NAME` departmentName , e.MANAGER_EID,m.name managerName,e.TYPE,t.`NAME` typeName, e.COMPANY_ID,c.`NAME` companyName,  e.YEARS_AT_JAPAN,e.PASSPORT_FLAG,e.PASSPORT_EXPIRE_DATE,e.VISA_FLAG,
+e.VISA_TYPE,v.`NAME` visaName,e.VISA_EXPIRE_DATE,e.JAPANESE_LEVEL,jl.`NAME` japaneseLevel,e.REENTRY_LIMITED_DATE,e.BILLABLE_FLAG,e.MANAGER_FLAG,e.INS_USER_ID,e.INS_TIMESTAMP,
+e.UPD_USER_ID,e.UPD_TIMESTAMP,
+role.ROLE_CODE,masterRole.`NAME` roleName
+from employee_info e 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0010') s on s.`CODE`=e.SITE_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0020') l on l.`CODE`=e.LOCATION_CODE 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1080') v on v.`CODE`=e.VISA_TYPE  
+INNER JOIN  (select eid , name from employee_info) m on m.eid=e. MANAGER_EID
+lEFT JOIN  department_m  d on d.ID=e.DEPARTMENT_ID 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0050') t on t.`CODE`=e.TYPE 
+lEFT JOIN company_m c on c.ID=e.COMPANY_ID 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1090') w on w.`CODE`=e.WORK_STATUS 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1070') jl on jl.`CODE`=e.JAPANESE_LEVEL 
+LEFT JOIN emp_skill_info skill on skill.EID=e.EID 
+LEFT JOIN  (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1100') skillcode on skillcode.`CODE`=skill.SKILL_CODE 
+LEFT JOIN  (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1110') skilllevel on skilllevel.`CODE`=skill.SKILL_LEVEL 
+LEFT JOIN emp_certification_info certification on certification.EID=e.EID 
+LEFT JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1060') certificationcode on certificationcode.`CODE`=certification.CERTIFICATION_CODE
+LEFT JOIN emp_job_info job on job.EID=e.EID
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1010') gdcc on gdcc.`CODE`=job.JOB_TITLE_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1040') dei on dei.`CODE`=job.DELIVERY_CAPABILITY_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1050') jddc on jddc.`CODE`=job.JOB_POSITION_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0060') shenpi on shenpi.`CODE`=job.CONFIRM_STATUS
+INNER JOIN  emp_role_info role on role.EID=e.EID
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0040') masterRole on masterRole.`CODE`=role.ROLE_CODE
+<where>
+		<if test="emp.eid != null and  emp.eid !='' ">
+			and e.eid = #{emp.eid}
+		</if>
+		<if test="emp.name != null and  emp.name !='' ">
+			<!--and e.name like #{emp.name}-->
+			  and e.name like '%${emp.name}%'
+		</if>
+		<if test="emp.site.code != null and emp.site.code!=''">
+			and e.SITE_CODE = #{emp.site.code}
+		</if>
+		<if test="emp.department.id != null and emp.department.id!=''">
+			and e.DEPARTMENT_ID = #{emp.department.id}
+		</if>
+		<if test="emp.type.code != null and emp.type.code!=''">
+			and e.TYPE = #{emp.type.code}
+		</if>
+		<if test="emp.company.id != null and emp.company.id!=''">
+			and e.COMPANY_ID = #{emp.company.id }
+		</if>
+		<if test="emp.work.code != null and emp.work.code!=''">
+			and e.WORK_STATUS = #{emp.work.code}
+		</if>
+		<if test="emp.billableFlag != null and emp.billableFlag!=''">
+			and e.BILLABLE_FLAG = #{emp.billableFlag}
+		</if>
+		<if test="startDateFrom!=null and startDateFrom!=''">
+			and START_DATE >= #{startDateFrom}
+		</if>
+		<if test="startDateTo!=null and startDateTo!=''">
+			and START_DATE &lt;= #{startDateTo}
+		</if>
+		<if test="endDateFrom!=null and endDateFrom!=''">
+			and END_DATE >= #{endDateFrom}
+		</if>
+		<if test="endDateTo!=null and endDateTo!=''">
+			and END_DATE &lt;= #{endDateTo}
+		</if>
+		<if test="emp.passportFlag != null and emp.passportFlag!=''">
+			and e.PASSPORT_FLAG = #{emp.passportFlag}
+		</if>
+		<if test="emp.visaFlag != null and emp.visaFlag!=''">
+			and e.VISA_FLAG = #{emp.visaFlag}
+		</if>
+		<if test="emp.japanLevel.code != null and emp.japanLevel.code!=''">
+			and e.JAPANESE_LEVEL = #{emp.japanLevel.code}
+		</if>
+		<if test="emp.yearsAtJanpan != null and emp.yearsAtJanpan!=''">
+			and e.YEARS_AT_JAPAN = #{emp.yearsAtJanpan}
+		</if>
+		
+		<if test="skillCode!=null and skillCode!=''">
+			and skillcode.CODE = #{skillCode}
+		</if>
+		<if test="skillLevelCode!=null and skillLevelCode!=''">
+			and skilllevel.CODE = #{skillLevelCode}
+		</if>
+		<if test="certificationCode!=null and certificationCode!=''">
+			and certificationcode.CODE = #{certificationCode}
+		</if>
+		
+		<if test="emp.jobInfo.jobTitle.code != null and emp.jobInfo.jobTitle.code!=''">
+			and gdcc.code = #{emp.jobInfo.jobTitle.code}
+		</if>
+		<if test="emp.jobInfo.deliveryCapability.code != null and emp.jobInfo.deliveryCapability.code!=''">
+			and del.code = #{emp.jobInfo.deliveryCapability.code}
+		</if>
+		<if test="emp.jobInfo.jobPosition.code != null and emp.jobInfo.jobPosition.code!=''">
+			and jddc.code = #{emp.jobInfo.jobPosition.code}
+		</if>
+		<if test="emp.jobInfo.confirmStatus.code != null and emp.jobInfo.confirmStatus.code !=''">
+			and shenpi.code = #{emp.jobInfo.confirmStatus.code }
+		</if>
+
+</where>
+	</select>
+<select id="findEmpByEid" resultMap="employeeMap"  parameterType="java.lang.String">
+select  DISTINCT e.EID,e.MAIL_ADDRESS,e.NAME,e.NAME_CN,e.NAME_KANJI,e.NAME_KANA,e.ENGLISH_NAME,e.BIRTHDAY,e.GENDER,
+e.TEL_NO,e.MOBILE_NO,e.EMERGENCY_TEL_NO,e.LOCATION_CODE,l.`NAME` locName,e.SITE_CODE,s.`NAME` siteName,e.START_DATE,e.END_DATE,e.WORK_STATUS,w.`NAME` workName,
+e.DEPARTMENT_ID,d.`NAME` departmentName , e.MANAGER_EID,m.name managerName,e.TYPE,t.`NAME` typeName, e.COMPANY_ID,c.`NAME` companyName,  e.YEARS_AT_JAPAN,e.PASSPORT_FLAG,e.PASSPORT_EXPIRE_DATE,e.VISA_FLAG,
+e.VISA_TYPE,v.`NAME` visaName,e.VISA_EXPIRE_DATE,e.JAPANESE_LEVEL,jl.`NAME` japaneseLevel,e.REENTRY_LIMITED_DATE,e.BILLABLE_FLAG,e.MANAGER_FLAG,e.INS_USER_ID,e.INS_TIMESTAMP,
+e.UPD_USER_ID,e.UPD_TIMESTAMP,
+role.ROLE_CODE,masterRole.`NAME` roleName
+from employee_info e 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0010') s on s.`CODE`=e.SITE_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0020') l on l.`CODE`=e.LOCATION_CODE 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1080') v on v.`CODE`=e.VISA_TYPE  
+INNER JOIN  (select eid , name from employee_info) m on m.eid=e. MANAGER_EID
+lEFT JOIN  department_m  d on d.ID=e.DEPARTMENT_ID 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0050') t on t.`CODE`=e.TYPE 
+lEFT JOIN company_m c on c.ID=e.COMPANY_ID 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1090') w on w.`CODE`=e.WORK_STATUS 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1070') jl on jl.`CODE`=e.JAPANESE_LEVEL 
+LEFT JOIN emp_skill_info skill on skill.EID=e.EID 
+LEFT JOIN  (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1100') skillcode on skillcode.`CODE`=skill.SKILL_CODE 
+LEFT JOIN  (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1110') skilllevel on skilllevel.`CODE`=skill.SKILL_LEVEL 
+LEFT JOIN emp_certification_info certification on certification.EID=e.EID 
+LEFT JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1060') certificationcode on certificationcode.`CODE`=certification.CERTIFICATION_CODE
+LEFT JOIN emp_job_info job on job.EID=e.EID
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1010') gdcc on gdcc.`CODE`=job.JOB_TITLE_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1040') dei on dei.`CODE`=job.DELIVERY_CAPABILITY_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1050') jddc on jddc.`CODE`=job.JOB_POSITION_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0060') shenpi on shenpi.`CODE`=job.CONFIRM_STATUS
+INNER JOIN  emp_role_info role on role.EID=e.EID
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0040') masterRole on masterRole.`CODE`=role.ROLE_CODE
+where e.eid = #{eid}
+</select>
+<select id="findAllManager" resultMap="employeeMap" >
+	select  DISTINCT e.EID,e.MAIL_ADDRESS,e.NAME,e.NAME_CN,e.NAME_KANJI,e.NAME_KANA,e.ENGLISH_NAME,e.BIRTHDAY,e.GENDER,
+e.TEL_NO,e.MOBILE_NO,e.EMERGENCY_TEL_NO,e.LOCATION_CODE,l.`NAME` locName,e.SITE_CODE,s.`NAME` siteName,e.START_DATE,e.END_DATE,e.WORK_STATUS,w.`NAME` workName,
+e.DEPARTMENT_ID,d.`NAME` departmentName , e.MANAGER_EID,m.name managerName,e.TYPE,t.`NAME` typeName, e.COMPANY_ID,c.`NAME` companyName,  e.YEARS_AT_JAPAN,e.PASSPORT_FLAG,e.PASSPORT_EXPIRE_DATE,e.VISA_FLAG,
+e.VISA_TYPE,v.`NAME` visaName,e.VISA_EXPIRE_DATE,e.JAPANESE_LEVEL,jl.`NAME` japaneseLevel,e.REENTRY_LIMITED_DATE,e.BILLABLE_FLAG,e.MANAGER_FLAG,e.INS_USER_ID,e.INS_TIMESTAMP,
+e.UPD_USER_ID,e.UPD_TIMESTAMP,
+role.ROLE_CODE,masterRole.`NAME` roleName
+from employee_info e 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0010') s on s.`CODE`=e.SITE_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0020') l on l.`CODE`=e.LOCATION_CODE 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1080') v on v.`CODE`=e.VISA_TYPE  
+INNER JOIN  (select eid , name from employee_info) m on m.eid=e. MANAGER_EID
+lEFT JOIN  department_m  d on d.ID=e.DEPARTMENT_ID 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0050') t on t.`CODE`=e.TYPE 
+lEFT JOIN company_m c on c.ID=e.COMPANY_ID 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1090') w on w.`CODE`=e.WORK_STATUS 
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1070') jl on jl.`CODE`=e.JAPANESE_LEVEL 
+LEFT JOIN emp_skill_info skill on skill.EID=e.EID 
+LEFT JOIN  (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1100') skillcode on skillcode.`CODE`=skill.SKILL_CODE 
+LEFT JOIN  (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1110') skilllevel on skilllevel.`CODE`=skill.SKILL_LEVEL 
+LEFT JOIN emp_certification_info certification on certification.EID=e.EID 
+LEFT JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1060') certificationcode on certificationcode.`CODE`=certification.CERTIFICATION_CODE
+LEFT JOIN emp_job_info job on job.EID=e.EID
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1010') gdcc on gdcc.`CODE`=job.JOB_TITLE_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1040') dei on dei.`CODE`=job.DELIVERY_CAPABILITY_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='1050') jddc on jddc.`CODE`=job.JOB_POSITION_CODE
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0060') shenpi on shenpi.`CODE`=job.CONFIRM_STATUS
+INNER JOIN  emp_role_info role on role.EID=e.EID
+INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE='0040') masterRole on masterRole.`CODE`=role.ROLE_CODE
+where role.ROLE_CODE='0001'
+	</select>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ssm.employee.dao.DepartmentMapper">
+	
+	<select id="getAllDepartments" resultType="Department">
+		SELECT  department_m.ID,department_m.`NAME`,department_m.MANAGER_EID,
+       			department_m.TYPE, department_m.PARENT_DEPARTMENT_ID, 
+       			department_m.DELETE_FLAG,department_m.INS_USER_ID,department_m.UPD_USER_ID ,department_m.UPD_TIMESTAMP
+        FROM department_m
+	</select>
+	 
+
+</mapper>

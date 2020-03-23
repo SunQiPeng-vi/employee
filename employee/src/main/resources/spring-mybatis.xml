@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- @Repository @Service @Controller @Autowired生效 -->
+	<context:component-scan base-package="com.ssm.employee"></context:component-scan>
+
+	<!--  
+		<bean id="deptController" class="com.sf.controller.DeptController">
+			<property name="ds" ref="deptService"></property>
+		</bean>
+	-->	
+	
+     <!-- 加载外部properties文件 -->
+     <context:property-placeholder location="classpath:db.properties"/>
+     
+     <!-- 配置数据库连接池对象 -->
+     <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+     	<property name="driverClass" value="${jdbc.driver}"></property>
+     	<property name="jdbcUrl" value="${jdbc.url}"></property>
+     	<property name="user" value="${jdbc.username}"></property>
+     	<property name="password" value="${jdbc.password}"></property>
+     </bean>
+     
+     <!-- 配置SqlSessionFactoryBean对象  导入mybatis-spring.jar -->
+     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+     	<property name="dataSource" ref="datasource"></property>
+     	<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+     	<property name="plugins">
+                <array>
+                    <bean class="com.github.pagehelper.PageInterceptor">
+                        <property name="properties">
+                            <value>
+                                <!-- 这里设定你的数据库类型 -->
+                               helperDialect=mysql
+                            </value>
+                        </property>
+                    </bean>
+                </array>
+    </property>
+     </bean>
+     
+     <!-- 配置mapper管理   spring管理dao下所有接口，并创建实现类，这些实现类对象由spring管理 -->
+     <bean id="mapperConfig" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+     	<property name="basePackage" value="com.ssm.employee.dao"></property>
+     </bean>
+     
+     <!-- 配置spring的事务管理器对象 -->
+     <bean id="tm" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     	<property name="dataSource" ref="datasource"></property>
+     </bean>
+     
+    <!-- 配置service中事务注解 @Transactional 生效 -->
+	<tx:annotation-driven transaction-manager="tm"/>
+     
+
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ssm.employee.dao.CompanyMapper">
+	
+	<select id="getAllCompanies" resultType="Company">
+		SELECT company_m.ID,company_m.`NAME`,company_m.TEL_NO,
+       			company_m.ADDRESS, company_m.ZIP, 
+       			company_m.DELETE_FLAG,company_m.INS_USER_ID,company_m.UPD_USER_ID ,company_m.UPD_TIMESTAMP
+        FROM company_m 
+	</select>
+</mapper>
