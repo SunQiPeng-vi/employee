@@ -103,7 +103,7 @@ INNER JOIN (select CATEGORY_CODE,CODE,NAME from cd_master_m where CATEGORY_CODE=
 			and e.JAPANESE_LEVEL = #{emp.japanLevel.code}
 		</if>
 		<if test="emp.yearsAtJanpan != null and emp.yearsAtJanpan!=''">
-			and e.YEARS_AT_JAPAN = #{emp.yearsAtJanpan}
+			and e.YEARS_AT_JAPAN >= #{emp.yearsAtJanpan}
 		</if>
 		
 		<if test="skillCode!=null and skillCode!=''">
