@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <html>
 <head>
 <title>Demo</title>
 <meta http-equiv="Content-Type"	content="content=text/html;charset=UTF-8">
 <link href="css/css.css" rel="stylesheet">
 <SCRIPT	language=javascript	src="js/common.js"></SCRIPT>
-<SCRIPT	language=javascript>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 
-</SCRIPT>
 <style type="text/css">
 <!--
 .style4	{
@@ -47,7 +47,7 @@
 									</tr> 
 									<tr> 
 										<td	width=30%>&nbsp;</td> 
-										<td> <p	class="titleCenter"> <font face="Times New Roman"> <b>用户登录</b></font></p></td>	
+										<td> <p	class="titleCenter"> <font face="Times New Roman"> <b>ユーザ認証</b></font></p></td>	
 									</tr> 
 								</table>
 							</td> 
@@ -68,16 +68,20 @@
 								<!-- work area start here --> 
 								<table width="100%"	 border="0"	cellspacing="1"	cellpadding="1"> 
 									<tr> 
-										<td	width="27%"	height="112">&nbsp;</td> 
+										<td	width="27%"	height="100">&nbsp;</td> 
 										<td	width="37%">&nbsp;</td>	
 										<td	width="36%">&nbsp;</td>	
 									</tr> 
 									<tr> 
-										<td	height="196">&nbsp;</td> 
+										<td	height="200">&nbsp;</td> 
 										<td> <form name="form1"	method="post" action="${pageContext.request.contextPath }/login"> 
 											<table width="100%"	height="100%"  border="0" cellpadding="0" cellspacing="0"> 
+												<tr ><span class="txt_error_message" id="txt_error_message">
+														<!-- 错误信息1<BR>  -->
+														</span>
+												</tr>
 												<tr>
-													<td	height="8" colspan="4" bgcolor="#666666"><span class="style5">&nbsp;Log on	</span></td>
+													<td	height="8" colspan="4" bgcolor="#666666"><span class="style5">ログオン</span></td>
 												</tr> 
 												<tr	bgcolor="#CCCCFF"> 
 													<td	width="10%" height="17" >&nbsp;</td> 
@@ -87,8 +91,8 @@
 												</tr> 
 												<tr	bgcolor="#CCCCFF" > 
 													<td height="22">&nbsp;</td> 
-													<td><span class="style6">User ID:</span> </td>
-													<td><input name="UID"	type="text"	class="string" size="20" maxlength="8"></td>
+													<td><span class="style6">ユーザ名 : </span> </td>
+													<td><input name="UID"	id ="username" type="text"	class="string" size="20" maxlength="8"></td>
 													<td>&nbsp;</td>
 												</tr> 
 												<tr> 
@@ -96,8 +100,8 @@
 												</tr> 
 												<tr	bgcolor="#CCCCFF" > 
 													<td height="22">&nbsp;	 </td> 
-													<td><span class="style6">PassWord : </span></td>
-													<td><input name="pass" type="password" class="string" size="20" maxlength="20"></td>
+													<td><span class="style6">パスワード : </span></td>
+													<td><input name="pass" id="password" type="password" class="string" size="20" maxlength="20"></td>
 													<td>&nbsp;</td>
 												</tr> 
 												<tr> 
@@ -105,18 +109,16 @@
 												</tr> 
 												<tr> 
 													<td	height="37"	colspan="4"	bgcolor="#CCCCFF"><div align="center">
-														<input name="Button" type="submit" value="LogOn">
+														<input name="Button" id="logon" type="button" value="ログオン">
 													</div></td>	
 												</tr>
-												<tr>
-													<td	height="6" colspan="4" bgcolor="#CCCCFF"> <a href="javascript: void	popHelp('logon')">Need help	with your log on? </a> </td>
-												</tr> 
+												 
 											</table> 
 										</form></td> 
 										<td>&nbsp;</td>
 									</tr>
 									<tr>
-										<td	height="88">&nbsp;</td>
+										<td	height="100">&nbsp;</td>
 										<td>&nbsp;</td>
 										<td>&nbsp;</td>
 									</tr> 
@@ -142,5 +144,43 @@
 	<!-- Footer	area end here --> 
 </table> 
 </div> 
+<script type="text/javascript">
+		
+		$("#logon").click(function(){
+			
+		$("#txt_error_message").html("");
+		var isSubmit = true;
+		var username=$("#username").val();
+		var password=$("#password").val();
+		if(username==""||password==""){
+			$("#txt_error_message").append("ユーザ名とパスワードは必須です。ご入力ください。<br/>");
+			return false;
+		}
+		else{
+			$.ajax({
+                type:'post',
+                url:'login',
+                dataType:"json",//注意使用的是打他dataType，而不是Content-Type
+                async: true,
+                data:{username:username,password:password},
+                success:function(data){
+                   if(data==null){
+                	   $("#txt_error_message").append("ユーザ名またはパスワードが存在していません。ご確認ください。<br/>");
+           			return false;
+                   }
+                   else{
+                       window.location.href ="mainmenu";
+                   }
+                },
+                error:function(){
+                	$("#txt_error_message").append("ERROR。<br/>");
+                }
+            });
+		}
+		
+		return isSubmit;
+		});
+	</script>
 </body>
+
 </html>
