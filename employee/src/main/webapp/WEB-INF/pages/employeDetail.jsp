@@ -36,7 +36,7 @@
                                         </tr> 
                                         <tr> 
                                           <td	width=40%>&nbsp;</td> 
-                                            <td> <p class="titleCenter"> <font face="Times New Roman"> <b>员工情报检索结果一览</b></font></p></td> 
+                                            <td> <p class="titleCenter"> <font face="Times New Roman"> <b>社員情報検索結果一覧</b></font></p></td> 
                                         </tr> 
                                     </table></td> 
                             </tr> 
@@ -45,7 +45,7 @@
                                 <tr bgcolor="#85B7FA"> 
                                     <td>&nbsp;</td> 
                                     <td width="150" class="txt_normal">操作者：${user.eid }</td> 
-                                    <td width="60" class="txt_normal"><div align="right"><a href="Login.htm">Logout</a></div></td> 
+                                    <td width="60" class="txt_normal"><div align="right"><a href="Login.jsp">ログアウト</a></div></td> 
                                 </tr> 
                             </table> 
                             <HR> 
@@ -59,30 +59,79 @@
                                                 <td width="205" >
                                                 	<table 	border="0" cellspacing="0" cellpadding="0" width="100%" > 
                                                 		 <tr> 
-                                                			<td width="205" height="30"><span class="menuBranch">&#8226;员工信息管理</span></td> 
+                                                			<td width="205" height="30"><span class="menuBranch">&#8226;社員管理</span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="employeRegister.htm" target="_self">员工信息登录</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/empRegister" target="_self">社員情報登録</a></span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/employeQuery" target="_self">员工信息检索</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/employeQuery" target="_self">社員情報検索</a></span></td> 
 			                                            </tr> 
 			                                             <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="confirmInfoQuery.htm" target="_self">员工信息审批</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="./confirmInfoQuery.htm" target="_self">社員情報承認</a></span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuBranch">&#8226;员工期权管理</span></td> 
+			                                                <td height="30"><span class="menuBranch">&#8226;Funnel管理</span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="TUPPurchase.htm" target="_self">员工期权申请</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="TUPQuery.htm" target="_self">员工期权一览</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
 			                                            </tr>  
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="TUPConfirm.htm" target="_self">员工期权审批</a></span></td> 
-			                                            </tr>  			                                           
-
+			                                                <td height="30"><span class="menuBranch">&#8226;プロジェクト管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <!-- トレーニング管理 -->
+			                                            <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;トレーニング管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingQuery.htm" target="_self">トレーニング検索</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingPublishQuery.htm" target="_self">トレーニング発表</a></span></td> 
+			                                            </tr>
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingParticipantQuery.htm" target="_self">トレーニング参加者変更</a></span></td> 
+			                                            </tr>
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr>
+			                                            <!-- /トレーニング管理 -->
+			                                            <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;稼働管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                             <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;システム管理</span></td> 
+			                                            </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="employeRoleAssign1.htm" target="_self">社員ロールアサイン</a></span></td> 
+						                                      </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="roleResourceList.htm" target="_self">ロール機能権限アサイン</a></span></td> 
+						                                      </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="passwordChange.htm" target="_self">パースワード変更</a></span></td> 
+						                                      </tr>
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="#" target="_self">マスタメンテナンス</a></span></td> 
+						                                      </tr>
+																									<tr> 
+			                                                <td>&nbsp;</td> 
+			                                            </tr>
                                                 	</table>	
                                                 </td> 
                                                 <td width="1" rowspan="12" bgcolor="#808080"></td> 
@@ -96,12 +145,12 @@
 
 					<table width="100%"  cellspacing="1"> 
 						<tr> 
-							<td class="tdFuncTitle">检索结果一览</td> 
+							<td class="tdFuncTitle">検索結果一覧</td> 
 						</tr> 
 					</table> 
 					<table width="100%"  cellspacing="1" > 
 						<tr> 
-							<td class="txt_normal">${page.total }件中${page.startRow }－${page.endRow }件表示</td>
+							<td class="txt_normal">${page.total }件中${page.startRow }－${page.endRow }件を表示</td>
 							<td align="right" class="txt_normal">&nbsp;&nbsp;
 							<a class="first" href="${pageContext.request.contextPath }/pageEmp?pagenum=1">最初</a>｜
 							<a class="first" href="${pageContext.request.contextPath }/pageEmp?pagenum=${page.prePage}">前</a>｜
@@ -123,28 +172,28 @@
                         <td>
 						  <table border="0" cellspacing="1" cellpadding="1"> 
                             <tr class="trHeader">
-                              <td nowrap width="25" align="center"class="txt_table_head" rowspan="2">选</td>
+                              <td nowrap width="25" align="center"class="txt_table_head" rowspan="2">選</td>
 							  <td nowrap width="80" align="center"class="txt_table_head" rowspan="2">EID</td>
-							  <td nowrap width="240" align="center"class="txt_table_head" colspan="2">员工名</td>
+							  <td nowrap width="240" align="center"class="txt_table_head" colspan="2">社員名</td>
                               <td nowrap width="30" align="center" class="txt_table_head" rowspan="2">性別</td> 
-                              <td nowrap width="115" align="center" class="txt_table_head" rowspan="2">电话号码</td>
-							  <td nowrap width="120" align="center" class="txt_table_head" rowspan="2">紧急联络电话</td>
-							  <td nowrap width="50" align="center" class="txt_table_head" rowspan="2">site</td>
-							  <td nowrap width="80" align="center" class="txt_table_head" rowspan="2">入职日</td>
-							  <td nowrap width="60" align="center" class="txt_table_head" rowspan="2">在职状态</td>
-							  <td nowrap width="70" align="center" class="txt_table_head" rowspan="2">部门</td>
+                              <td nowrap width="115" align="center" class="txt_table_head" rowspan="2">電話番号</td>
+							  <td nowrap width="120" align="center" class="txt_table_head" rowspan="2">緊急連絡番号</td>
+							  <td nowrap width="50" align="center" class="txt_table_head" rowspan="2">サイト</td>
+							  <td nowrap width="80" align="center" class="txt_table_head" rowspan="2">入社日</td>
+							  <td nowrap width="60" align="center" class="txt_table_head" rowspan="2">在職状態</td>
+							  <td nowrap width="70" align="center" class="txt_table_head" rowspan="2">部署</td>
 							  <td nowrap width="50" align="center" class="txt_table_head" rowspan="2">HP/BP</td> 
 							 </tr>
 							 <tr  class="trHeader">
-							  <td nowrap width="120" align="center" class="txt_table_head">(拼音)</td>
-							  <td nowrap width="120" align="center" class="txt_table_head">(中文)</td>
+							  <td nowrap width="120" align="center" class="txt_table_head">(ローマ字)</td>
+							  <td nowrap width="120" align="center" class="txt_table_head">(中文名)</td>
 							  </tr>
                           </table>
 						</td> 
                       </tr>
 					
                       <tr align="left">
-                        <td><form id="form1" name="form1" method="post" action="${pageContext.request.contextPath }/empupdateByeid">
+                        <td><form id="form1" name="form1" method="post" action="">
 
 						<table id="info" border="0" cellpadding="1" cellspacing="1">
 							<c:forEach items="${page.list }" var="emp" varStatus="vs">
@@ -181,9 +230,9 @@
                             <tr> 
                               <td width="70"></td> 
                              <!-- <td width="138"><input id="info" name="B2" type="button" class="string" onClick="openWindow('employeReferto1.htm')" value="　　详　细　　"></td>  -->
-							  <td width="138"><input id="update" name="B2" type="button" class="string"  value="　　更　新　　"></td> 
-							  <td width="138"><input id="out" name="B2" type="button" class="string" onClick="openWindow('empinfoOutput.htm')" value="　　导　出　　"></td>
-                              <td width="218"><input id="recheck"name="B3" type="button" class="string" onClick="openWindow('employeQuery.htm')" value="　　再检索　　"></td>
+							  <td width="138"><input id="update" name="B2" type="button" class="string" onclick="EmpUpdate"  value="　　更　新　　"></td> 
+							  <td width="138"><input id="out" name="B2" type="button" class="string" onClick="EmpOut" value="　　出　力　　"></td>
+                              <td width="218"><input id="recheck"name="B3" type="button" class="string" onClick="openWindow('employeQuery.htm')" value="　　再検索　　"></td>
                             </tr> 
                           </table>
 						</td>
@@ -211,6 +260,12 @@
 <script type="text/javascript">
 
 	$("#update").click(function(){
+		var newUrl = '${pageContext.request.contextPath }/empupdateByeid';
+		$("#form1").attr('action',newUrl);
+		$("#form1").submit();
+	});
+	
+	$("#out").click(function(){
 		$("#form1").submit();
 	});
 	
