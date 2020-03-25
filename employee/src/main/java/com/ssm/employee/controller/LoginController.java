@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.ssm.employee.pojo.UserInfo;
@@ -22,15 +23,22 @@ public class LoginController {
 	}
 
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(@RequestParam("UID")String uname, @RequestParam("pass")String upwd,
+	@ResponseBody
+	public UserInfo  login(String username,String password,
 			             Model model) {
-		UserInfo userInfo = userInfoService.getUserByLogin(uname, upwd);
+		System.out.println(username);
+		System.out.println(password);
+		UserInfo userInfo = userInfoService.getUserByLogin(username, password);
 		if(userInfo != null) {
 			model.addAttribute("user", userInfo);
-			return "mainmenu";
+			return userInfo;
 		}else {
-			return "redirect:/login_e.jsp";
-		}
-		
+			return null;
+		}		
+	}
+	
+	@RequestMapping(value="/mainmenu")
+	public String login() {
+		return "mainmenu";
 	}
 }
