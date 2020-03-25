@@ -36,7 +36,7 @@
 										  </tr>
 										  <tr>
 										  	<td	width=40%>&nbsp;</td>
-											  <td><p class="titleCenter"><font face="Times New Roman"><b>员工情报详细</b></font></p></td>
+											  <td><p class="titleCenter"><font face="Times New Roman"><b>社員情報参照</b></font></p></td>
 										  </tr>
 								  </table>
 							</td>
@@ -47,7 +47,7 @@
 						<tr	bgcolor="#85B7FA">
 							<td>&nbsp;</td>
 							<td	width="150"	class="txt_normal">操作者：${user.eid }</td>
-							<td	width="60" class="txt_normal"><div align="right"><a	href="Login.htm">Logout</a></div></td>
+							<td	width="60" class="txt_normal"><div align="right"><a	href="Login.jsp">ログアウト</a></div></td>
 						</tr>
 					</table>
 					<HR>
@@ -60,38 +60,87 @@
 										<td width="2" rowspan="12" bgcolor="#808080" >&nbsp;</td> 
 										<td width="205" >
 											<table 	border="0" cellspacing="0" cellpadding="0" width="100%" > 
-												 <tr> 
-													<td width="205" height="30"><span class="menuBranch">&#8226;员工信息管理</span></td> 
-												</tr> 
-												<tr> 
-													<td height="30"><span class="menuItem">　　<a href="employeRegister.htm" target="_self">员工信息登录</a></span></td> 
-												</tr> 
-												<tr> 
-													<td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/employeQuery" target="_self">员工信息检索</a></span></td> 
-												</tr> 
-												 <tr> 
-													<td height="30"><span class="menuItem">　　<a href="confirmInfoQuery.htm" target="_self">员工信息审批</a></span></td> 
-												</tr> 
-												<tr> 
-													<td height="30"><span class="menuBranch">&#8226;员工期权管理</span></td> 
-												</tr> 
-												<tr> 
-													<td height="30"><span class="menuItem">　　<a href="TUPPurchase.htm" target="_self">员工期权申请</a></span></td> 
-												</tr> 
-												<tr> 
-													<td height="30"><span class="menuItem">　　<a href="TUPQuery.htm" target="_self">员工期权一览</a></span></td> 
-												</tr>  
-												<tr> 
-													<td height="30"><span class="menuItem">　　<a href="TUPConfirm.htm" target="_self">员工期权审批</a></span></td> 
-												</tr>  			                                           
-
-											</table>	
-										</td> 
-										<td width="1" rowspan="12" bgcolor="#808080"></td> 
-									</tr> 
-									
-									
-								</table> 
+                                                		 <tr> 
+                                                			<td width="205" height="30"><span class="menuBranch">&#8226;社員管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/empRegister" target="_self">社員情報登録</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/employeQuery" target="_self">社員情報検索</a></span></td> 
+			                                            </tr> 
+			                                             <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="./confirmInfoQuery.htm" target="_self">社員情報承認</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;Funnel管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr>  
+			                                            <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;プロジェクト管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <!-- トレーニング管理 -->
+			                                            <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;トレーニング管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingQuery.htm" target="_self">トレーニング検索</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingPublishQuery.htm" target="_self">トレーニング発表</a></span></td> 
+			                                            </tr>
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingParticipantQuery.htm" target="_self">トレーニング参加者変更</a></span></td> 
+			                                            </tr>
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr>
+			                                            <!-- /トレーニング管理 -->
+			                                            <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;稼働管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                             <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;システム管理</span></td> 
+			                                            </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="employeRoleAssign1.htm" target="_self">社員ロールアサイン</a></span></td> 
+						                                      </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="roleResourceList.htm" target="_self">ロール機能権限アサイン</a></span></td> 
+						                                      </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="passwordChange.htm" target="_self">パースワード変更</a></span></td> 
+						                                      </tr>
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="#" target="_self">マスタメンテナンス</a></span></td> 
+						                                      </tr>
+																									<tr> 
+			                                                <td>&nbsp;</td> 
+			                                            </tr>
+                                                	</table>	
+                                                </td> 
+                                                <td width="1" rowspan="12" bgcolor="#808080"></td> 
+                                            </tr> 
+                                            
+                                            
+                                        </table> 
 								<!-- navigator area end here --> 
 							</div></td> 
 							
@@ -103,110 +152,110 @@
 	                    			<table width="90%" border="0" cellpadding="1" cellspacing="1" align="left">
 	                    			<!-- 社員基本情报 -->
 									    <tr height="20">
-									    	<td colspan="4"><span class="txt_normal"><b>员工基本情报</b></span></td>
+									    	<td colspan="4"><span class="txt_normal"><b>社員基本情報</b></span></td>
 									    </tr>
 										<tr> 
 					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">EID</font></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.eid }</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">邮件地址</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">メールアドレス</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.mailAddress }</span></td>                              
 					                    </tr>                     
 				                        <tr><td><br></td></tr>
 				                        <tr> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">姓名(中文)</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">名前(中国語漢字)</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.nameCn }</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">姓名(拼音)</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">名前(ローマ字)</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.name }</span></td>                         
 				                        </tr> 
 				                       <tr>	
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">姓名(日语汉字)</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">名前(日本語漢字)</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.nameKanji}</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">姓名(日语假名)</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">名前(日本語カナ)</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.nameKana}</span></td>                           
 				                        </tr> 
 										<tr>
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">英文名</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">英名</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.englishName}</span></td>
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">直属经理</span></td>
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">レポートマネージャー</span></td>
 					                        <td class="trOdd"><span class="txt_normal">${emp.managerName}</span></td>
 										</tr> 
 										<tr><td><br></td></tr>
 											
 					                    <tr>
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">出生年月日</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">誕生日</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.birthday}</span></td> 
 					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">性別</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.gender=='M'?'男':'女' }</span></td>                          
 										</tr>                                										
 				                      	<tr> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">电话号码</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">電話番号</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.telNo}</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">手机号码</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">携帯番号</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.mobileNo}</span></td> 
 				                      	</tr>
 				                      	<tr>
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">紧急联络电话</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">緊急連絡番号</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.emergencyTelNo}</span></td>
 					                        <td width="134" class="trEven">&nbsp;</td>
 					                        <td class="trOdd"></td>
 				                      	</tr>
 				                      	<tr><td><br></td></tr>
 				                      	<tr> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">Location Code</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">ロケーションコード</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.location.name}</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">Site</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">サイト</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">SH-${emp.site.name}</span></td>                           
 				                      	</tr>
 				                      	<tr>
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">部门</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">部署</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.department.name}</span></td>                     	
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">在职状态</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">在職ステータス</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.work.name}</span></td>                         	
 				                    	</tr>	
 				                      	<tr> 
 					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">Billable区分</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.billableFlag == '1' ? 'Billable':'NonBillable'}</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">Manager区分</span></td> 
-					                        <td class="trOdd"><span class="txt_normal">${emp.managerFlag == '1' ? 'Manager':'普通社员'}</span></td>                                             
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">マネージャー区分</span></td> 
+					                        <td class="trOdd"><span class="txt_normal">${emp.managerFlag == '1' ? 'Manager':'普通社員'}</span></td>                                             
 				                      	</tr> 
 				                      	<tr> 
 					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">HP/BP区分</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.type.name}</span></td>
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">所属公司</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">所属会社</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.type.name == 'BP' ? 'BP':'HP'}</span></td>                                                  
 				                     	</tr>                                           	
 				                      	<tr> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">入职日</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">入社日</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.startDate}</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">退职日</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">退社日</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.endDate}</span></td>
 				                      	</tr> 
 				                      	<tr><td cols="4"><br></td></tr>
                       
 				                     	<!-- 日本経歴及びVisa情报 -->                   
 				                      	<tr height="20">
-				                      		<td colspan="4"><span class="txt_normal"><b>日本经历及Visa情报</b></span></td>
+				                      		<td colspan="4"><span class="txt_normal"><b>日本経歴及びVisa情報</b></span></td>
 				                      	</tr>
 				                      	<tr> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">在日年限</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">日本へ滞在年限</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.yearsAtJanpan}</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">日语水平</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">日本語レベル</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.japanLevel.name}</span></td>                                                 
 				                      	</tr>
 				                      	<tr>
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">是否有护照</span></td> 
-					                        <td class="trOdd"><span class="txt_normal">${emp.passportFlag == '1' ? '有':'无'}</span></td>
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">护照有效期限</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">パスポート有無</span></td> 
+					                        <td class="trOdd"><span class="txt_normal">${emp.passportFlag == '1' ? '有':'無'}</span></td>
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">パスポート有効期限</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.passportExpireDate}</span></td>                        	
 				                      	</tr>                                  										
 				                      	<tr> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">是否有签证</span></td> 
-					                        <td class="trOdd"><span class="txt_normal">${emp.visaFlag == '1' ? '有':'无'}</span></td> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">签证种类</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">ビザ有無</span></td> 
+					                        <td class="trOdd"><span class="txt_normal">${emp.visaFlag == '1' ? '有':'無'}</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">ビザ種類</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.visaType.name}</span></td>                                                 
 				                      	</tr>  
 				                      	<tr> 
-					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">签证有效期限</span></td> 
+					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">ビザ有効期限</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.visaExpireDate}</span></td> 
 					                        <td width="134" class="trEven">&nbsp;<span class="txt_normal">再入国期限</span></td> 
 					                        <td class="trOdd"><span class="txt_normal">${emp.reentryLimitedDate}</span></td>                                                 
@@ -215,7 +264,7 @@
                       
 				                      	<!-- JOB情报 -->                   
 				                      	<tr height="20">
-				                      		<td colspan="4"><span class="txt_normal"><b>JOB情报</b></span></td>
+				                      		<td colspan="4"><span class="txt_normal"><b>JOB情報</b></span></td>
 				                      	</tr>
 				                      	<tr align="left" >
 				                      		<td colspan="4">
@@ -223,10 +272,11 @@
 													<tr class="trHeader">
 														<td nowrap width="120" align="center" class="txt_table_head">GDCC JOB Title</td>
 														<td nowrap width="150" align="center" class="txt_table_head">Delivery Capability 認定</td>
-														<td nowrap width="120" align="center" class="txt_table_head">JDDC 组织 Title</td>
-														<td nowrap width="80" align="center" class="txt_table_head">审批状态</td>
-														<td nowrap align="center" class="txt_table_head">备注</td>
+														<td nowrap width="120" align="center" class="txt_table_head">JDDC 組織  Title</td>
+														<td nowrap width="80" align="center" class="txt_table_head">承認状態</td>
+														<td nowrap align="center" class="txt_table_head">備考</td>
 													</tr>
+													<tbody id="tjob">
 													<c:forEach items="${jobs }" var="job" varStatus="vs">
 													<tr class="${vs.count%2==1?'trOdd':'trEven' }" >
 														<td nowrap width="120" align="center" class="${job.confirmStatus.code=='0003'?'txt_error_message':'txt_normal' }">${job.jobTitle.name }</td>
@@ -235,7 +285,8 @@
 														<td nowrap width="80" align="center" class="${job.confirmStatus.code=='0003'?'txt_error_message':'txt_normal' }">${job.confirmStatus.name }</td>
 														<td nowrap align="center" class="${job.confirmStatus.code=='0003'?'txt_error_message':'txt_normal' }">${job.rejectReason }</td>
 													</tr>
-												</c:forEach>																														
+													</c:forEach>	
+													</tbody>																												
 												</table>
 											</td>
 										</tr>
@@ -243,14 +294,14 @@
                       
 									    <!-- 社員資格情报 -->                   
 				                      	<tr height="20">
-				                      		<td colspan="4"><span class="txt_normal"><b>员工资格认证情报</b></span></td>
+				                      		<td colspan="4"><span class="txt_normal"><b>社員資格情報</b></span></td>
 				                      	</tr>
 				                      	<tr align="left" >
 				                      		<td colspan="4">
               									<table border="0" width="300" cellspacing="1" cellpadding="1">
 													<tr class="trHeader">
-														<td width="70%" align="center" class="txt_table_head">资格认证</td>
-														<td width="30%" align="center" class="txt_table_head">取得日期</td>
+														<td width="70%" align="center" class="txt_table_head">資格認証</td>
+														<td width="30%" align="center" class="txt_table_head">取得日付</td>
 													</tr>
 													<c:forEach items="${certifications }" var="certification" varStatus="vs">
 													<tr class="${vs.count%2==1?'trOdd':'trEven' }" >
@@ -266,14 +317,14 @@
                       
 									    <!-- 社員スキル情报 -->                   
 				                      	<tr height="20">
-				                      		<td colspan="4"><span class="txt_normal"><b>员工技能情报</b></span></td>
+				                      		<td colspan="4"><span class="txt_normal"><b>社員スキル情報</b></span></td>
 				                      	</tr>                      
 				                      	<tr align="left">
 				                      		<td colspan="4">
               									<table border="0" width="300" cellspacing="1" cellpadding="1">
 													<tr class="trHeader">
-														<td width="70%" align="center" class="txt_table_head">技能</td>
-														<td width="30%" align="center" class="txt_table_head">技能水平</td>
+														<td width="70%" align="center" class="txt_table_head">スキル</td>
+														<td width="30%" align="center" class="txt_table_head">スキルレベル</td>
 													</tr>
 													<c:forEach items="${skills }" var="skill" varStatus="vs">
 													<tr class="${vs.count%2==1?'trOdd':'trEven' }" >
@@ -288,7 +339,7 @@
 										</tr>
 										<tr>
 						  					<td colspan="4" align="center"><br>
-						  						<input id="back" type="button" value="　返 回　" name="Back" class="string" >
+						  						<input id="back" type="button" value="　戻　る　" name="Back" class="string" >
 						  					</td>
                       					</tr>                      
 									</table>
@@ -323,6 +374,18 @@
 		window.history.back();
 		
 	});
+	$(document).ready(function(){
+		var role = ${user.jobCode};
+		var ueid = ${user.eid};
+		var meid = ${emp.managerEid};
+		if(role == "0001" ){
+			if(ueid!=meid)
+			$("#tjob").hide();
+			
+		}
+	});
+	
+	
 </script>
 </body>
 </html>
