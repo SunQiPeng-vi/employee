@@ -38,7 +38,7 @@
                                         </tr> 
                                         <tr> 
                                           <td	width=40%>&nbsp;</td> 
-                                            <td> <p class="titleCenter"> <font face="Times New Roman"> <b>员工信息检索</b></font></p></td> 
+                                            <td> <p class="titleCenter"> <font face="Times New Roman"> <b>社員情報検索</b></font></p></td> 
                                         </tr> 
                                     </table></td> 
                             </tr> 
@@ -47,7 +47,7 @@
                                 <tr bgcolor="#85B7FA"> 
                                     <td>&nbsp;</td> 
                                     <td width="150" class="txt_normal">操作者：${user.eid} </td> 
-                                    <td width="60" class="txt_normal"><div align="right"><a href="Login.htm">Logout</a></div></td> 
+                                    <td width="60" class="txt_normal"><div align="right"><a href="Login.jsp">ログアウト</a></div></td> 
                                 </tr> 
                             </table> 
                             <HR> 
@@ -61,30 +61,79 @@
                                                 <td width="205" >
                                                 	<table 	border="0" cellspacing="0" cellpadding="0" width="100%" > 
                                                 		 <tr> 
-                                                			<td width="205" height="30"><span class="menuBranch">&#8226;员工信息管理</span></td> 
+                                                			<td width="205" height="30"><span class="menuBranch">&#8226;社員管理</span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="employeRegister.htm" target="_self">员工信息登录</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/empRegister" target="_self">社員情報登録</a></span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/employeQuery" target="_self">员工信息检索</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="${pageContext.request.contextPath }/employeQuery" target="_self">社員情報検索</a></span></td> 
 			                                            </tr> 
 			                                             <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="confirmInfoQuery.htm" target="_self">员工信息审批</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="./confirmInfoQuery.htm" target="_self">社員情報承認</a></span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuBranch">&#8226;员工期权管理</span></td> 
+			                                                <td height="30"><span class="menuBranch">&#8226;Funnel管理</span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="TUPPurchase.htm" target="_self">员工期权申请</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
 			                                            </tr> 
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="TUPQuery.htm" target="_self">员工期权一览</a></span></td> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
 			                                            </tr>  
 			                                            <tr> 
-			                                                <td height="30"><span class="menuItem">　　<a href="TUPConfirm.htm" target="_self">员工期权审批</a></span></td> 
-			                                            </tr>  			                                           
-
+			                                                <td height="30"><span class="menuBranch">&#8226;プロジェクト管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <!-- トレーニング管理 -->
+			                                            <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;トレーニング管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingQuery.htm" target="_self">トレーニング検索</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingPublishQuery.htm" target="_self">トレーニング発表</a></span></td> 
+			                                            </tr>
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="trainingParticipantQuery.htm" target="_self">トレーニング参加者変更</a></span></td> 
+			                                            </tr>
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr>
+			                                            <!-- /トレーニング管理 -->
+			                                            <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;稼働管理</span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                            <tr> 
+			                                                <td height="30"><span class="menuItem">　　<a href="#" target="_self">XXXX</a></span></td> 
+			                                            </tr> 
+			                                             <tr> 
+			                                                <td height="30"><span class="menuBranch">&#8226;システム管理</span></td> 
+			                                            </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="employeRoleAssign1.htm" target="_self">社員ロールアサイン</a></span></td> 
+						                                      </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="roleResourceList.htm" target="_self">ロール機能権限アサイン</a></span></td> 
+						                                      </tr> 
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="passwordChange.htm" target="_self">パースワード変更</a></span></td> 
+						                                      </tr>
+						                                      <tr> 
+						                                          <td height="30"><span class="menuItem">　　<a href="#" target="_self">マスタメンテナンス</a></span></td> 
+						                                      </tr>
+																									<tr> 
+			                                                <td>&nbsp;</td> 
+			                                            </tr>
                                                 	</table>	
                                                 </td> 
                                                 <td width="1" rowspan="12" bgcolor="#808080"></td> 
@@ -118,15 +167,15 @@
                     <div>
                       <table width="100%" border="0" cellpadding="1" cellspacing="1"> 
 					  <form action="${pageContext.request.contextPath }/findEmp" method="get" name="searchForm" target="_self">
-					    <tr><td colspan="4"><span class="txt_normal"><b>员工基本情报</b></span></td></tr>
+					    <tr><td colspan="4"><span class="txt_normal"><b>社員基本情報</b></span></td></tr>
                         <tr > 
                           <td width="25%" class="tdLabel"><span class="txt_normal">EID</span></td> 
                           <td width="25%"><input type="text" id="eid" name="eid" size="20" maxlength="8" class="string" value=""></td> 
-                          <td width="25%" class="tdLabel"><span class="txt_normal">姓名（拼音）</span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">名前（ローマ字）</span></td> 
                           <td width="25%"><input type="text" id="name" name="name" size="20"  class="string" value=""></td> 
                         </tr> 
                         <tr> 
-                          <td width="25%" class="tdLabel"><span class="txt_normal">Site</span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">サイト</span></td> 
 						  <td width="25%">
 								<select size="1" name="site.code" class="string_selectbox_1">
 									<option></option>
@@ -136,7 +185,7 @@
 								    </c:forEach>
 								</select>
 						　</td>
-                          <td width="25%" class="tdLabel"><span class="txt_normal">部门</span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">部署</span></td> 
 						  <td width="25%">
 								<select size="1" name="department.id" class="string_selectbox_1">
 								    <option></option>
@@ -148,9 +197,9 @@
 						　</td>
                         </tr>
                         <tr>
-                          <td width="25%" class="tdLabel"><span class="txt_normal">员工种类</span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">社員種類</span></td> 
 						  <td width="25%">
-								<select size="1" name="type.code" class="string_selectbox_1">
+								<select size="1" name="type.code"  id="mytype" class="string_selectbox_1">
 								    <option></option>
 								    <!-- add 2020/3/4 by sun -->
 								    <c:forEach items="${types }" var="t">
@@ -163,9 +212,9 @@
 								</select>
 						  </td>
 						　</td>
-                          <td width="25%" class="tdLabel"><span class="txt_normal">公司<span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">会社<span></td> 
 						  <td width="25%">
-								<select size="1" name="company.id" class="string_selectbox_1">
+								<select size="1" name="company.id" id="mycompany" class="string_selectbox_1">
 								    <option></option>
 									<!-- add 2020/3/4 by sun -->
 								    <c:forEach items="${companies}" var="t">
@@ -175,13 +224,18 @@
 						　</td>
                         </tr>
                         <tr> 
-                          <td width="25%" class="tdLabel" ><span class="txt_normal">在职状态</span></td>
+                          <td width="25%" class="tdLabel" ><span class="txt_normal">在職ステータス</span></td>
 						  <td width="25%">
 								<select size="1" name="work.code" class="string_selectbox_1">
 									<option></option>
 									 <!-- add 2020/3/4 by sun -->
 								    <c:forEach items="${works }" var="t">
+								   		<c:if test="${user.jobCode!='0002' and  t.code!='0003'}">
 								    	<option value="${t.code }">${t.name }</option>
+								    	</c:if>
+								    	<c:if test="${user.jobCode=='0002'}">
+								    	<option value="${t.code }">${t.name }</option>
+								    	</c:if>
 								    </c:forEach>
 								</select>
 						　</td>
@@ -195,16 +249,16 @@
 						  </td>
                         </tr>
                         <tr > 
-                          <td  width="25%" class="tdLabel"><span class="txt_normal">入职日</span></td> 
+                          <td  width="25%" class="tdLabel"><span class="txt_normal">入社日</span></td> 
                           <td colspan="3">
                               <input type="text"  name="startDateFrom" size="20" class="string" maxlength="8" value="" id="startDateFrom1" onkeydown="javascript:return skip2component(this);"><input type="image" src="${pageContext.request.contextPath }/img/calendar.gif" onclick="return showCalendar('startDateFrom1', 'y/mm/dd');" onkeydown="javascript:return skip2component(this);"/>
                               <span class="txt_normal">&nbsp;～&nbsp;</span>
                               <input type="text"  name="startDateTo" size="20" class="string" maxlength="8" value="" id="startDateFrom2" onkeydown="javascript:return skip2component(this);"><input type="image" src="${pageContext.request.contextPath }/img/calendar.gif" onclick="return showCalendar('startDateFrom2', 'y/mm/dd');" onkeydown="javascript:return skip2component(this);"/>
 						  </td>
 						  </tr>
-						  <tbody id="t_tuizhi" style="display:${user.jobName=='一般员工' or user.jobName=='系统管理员'or user.jobName=='直属经理'? 'none':''}">
+						  <tbody id="t_tuizhi" style="display:${user.jobCode=='0003' or user.jobCode=='0004'or user.jobCode=='0001'? 'none':''}">
 						  <tr>
-                          <td  width="25%" class="tdLabel"><span class="txt_normal">退职日</span></td> 
+                          <td  width="25%" class="tdLabel"><span class="txt_normal">退社日</span></td> 
                           <td colspan="3">
                               <input type="text" name="endDateFrom" size="20" class="string" maxlength="8" value="" id="startDateFrom3" onkeydown="javascript:return skip2component(this);"><input type="image" src="${pageContext.request.contextPath }/img/calendar.gif" onclick="return showCalendar('startDateFrom3', 'y/mm/dd');" onkeydown="javascript:return skip2component(this);"/>
                               <span class="txt_normal">&nbsp;～&nbsp;</span>
@@ -213,27 +267,27 @@
 						</tr>
 						</tbody>
 						<tr><td cols="4"><br></td></tr>
-						<tr><td colspan="4"><span class="txt_normal"><b>日本经历及びVisa情报</b></span></td></tr>
+						<tr><td colspan="4"><span class="txt_normal"><b>日本経歴及びVisa情報</b></span></td></tr>
                         <tr> 
-                          <td width="25%" class="tdLabel"><span class="txt_normal">是否有护照</span></td>
+                          <td width="25%" class="tdLabel"><span class="txt_normal">パスポート有無</span></td>
 						  <td width="25%">
 								<select size="1" name="passportFlag" class="string_selectbox_3">
 									<option></option>
 									<option value="1">有</option>
-									<option value="0">无</option>
+									<option value="0">無</option>
 								</select>
 						　</td>
-                          <td width="25%" class="tdLabel"><span class="txt_normal">是否有签证</span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">ビザ有無</span></td> 
 						  <td width="25%">
 								<select size="1" name="visaFlag" class="string_selectbox_3">
 									<option></option>
 									<option value="1">有</option>
-									<option value="0">无</option>
+									<option value="0">無</option>
 								</select>
 						　</td>
                         </tr> 
                         <tr> 
-                          <td width="25%" class="tdLabel" ><span class="txt_normal">日语水平</span></td>
+                          <td width="25%" class="tdLabel" ><span class="txt_normal">日本語レベル</span></td>
 						  <td width="25%">
 								<select size="1" name="japanLevel.code" class="string_selectbox_3">
 									<option></option>
@@ -243,13 +297,13 @@
 								    </c:forEach>
 								</select>
 						　</td>
-                          <td width="25%" class="tdLabel"><span class="txt_normal">在日年限</span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">日本滞在年限</span></td> 
                           <td width="25%"><input type="text" id="year" name="yearsAtJanpan" size="4"  maxlength="4" class="string_selectbox_3" value="">&nbsp;<span class="txt_normal">年以上</span></td> 
                         </tr>
 						<tr><td cols="4"><br></td></tr>
-						<tr><td colspan="4"><span class="txt_normal"><b>技能情报</b></span></td></tr>
+						<tr><td colspan="4"><span class="txt_normal"><b>スキル情報</b></span></td></tr>
                         <tr> 
-                          <td width="25%" class="tdLabel" ><span class="txt_normal">技能</span></td>
+                          <td width="25%" class="tdLabel" ><span class="txt_normal">スキル</span></td>
 						  <td width="25%">
 								<select size="1" name="skillCode" class="string_selectbox_3">
 									<option></option>
@@ -259,7 +313,7 @@
 								    </c:forEach>
 								</select>
 						　</td>
-                          <td width="25%" class="tdLabel"><span class="txt_normal">技能水平</span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">スキルレベル</span></td> 
 						  <td width="25%">
 								<select size="1" name="skillLevelCode" class="string_selectbox_3">
 									<option></option>
@@ -271,9 +325,9 @@
 						　</td>
                         </tr>
 						<tr><td cols="4"><br></td></tr>
-						<tr><td colspan="4"><span class="txt_normal"><b>资格认证情报</b></span></td></tr>
+						<tr><td colspan="4"><span class="txt_normal"><b>資格情報</b></span></td></tr>
                         <tr> 
-                          <td width="25%" class="tdLabel" ><span class="txt_normal">资格</span></td>
+                          <td width="25%" class="tdLabel" ><span class="txt_normal">資格</span></td>
 						  <td cols="3">
 								<select size="1" name="certificationCode" class="string_selectbox_3">
 									<option></option>
@@ -284,9 +338,9 @@
 								</select>
 						　</td>
                         </tr>
-                        <tbody id="t_qingbao" style="display:${user.jobName=='一般员工' or user.jobName=='系统管理员' ? 'none':''}">
+                        <tbody id="t_qingbao" style="display:${user.jobCode=='0003' or user.jobCode=='0004' ? 'none':''}">
 						<tr><td cols="4"><br></td></tr>
-						<tr><td colspan="4"><span class="txt_normal"><b>JOB情报</b></span></td></tr>
+						<tr><td colspan="4"><span class="txt_normal"><b>JOB情報</b></span></td></tr>
 						<tr>
                           <td width="25%" class="tdLabel" ><span class="txt_normal">GDCC JOB Title</span></td>
 						  <td width="25%">
@@ -298,7 +352,7 @@
 									</c:forEach>
 								</select>
 						　</td>
-                          <td width="25%"class="tdLabel"><span class="txt_normal">Delivery Capability 认定</span></td>
+                          <td width="25%"class="tdLabel"><span class="txt_normal">Delivery Capability 認定</span></td>
 						  <td width="25%">
 								<select size="1" name="jobInfo.deliveryCapability.code" class="string_selectbox_3">
 									<option></option>
@@ -310,7 +364,7 @@
 						　</td>
 						 </tr>
                         <tr > 
-                          <td width="25%" class="tdLabel"><span class="txt_normal">JDDC 组织 Title</span></td> 
+                          <td width="25%" class="tdLabel"><span class="txt_normal">JDDC 組織  Title</span></td> 
 						  <td colspan="3">
 								<select size="1" name="jobInfo.jobPosition.code" class="string_selectbox_3">
 									<option></option>
@@ -322,13 +376,13 @@
 						　</td>
                         </tr> 
                         </tbody>
-                        <tbody id="t_shenpi" style="display:${user.jobName=='一般员工' or user.jobName=='系统管理员' or user.jobName=='直属经理'? 'none':''}">
+                        <tbody id="t_shenpi" style="display:${user.jobCode=='0003' or user.jobCode=='0004' or user.jobCode=='0001'? 'none':''}">
 						<tr><td cols="4"><br></td></tr>
                         <tr> 
-                          <td width="25%"class="tdLabel" ><span class="txt_normal">审批状态</span></td>
+                          <td width="25%"class="tdLabel" ><span class="txt_normal">承認ステータス</span></td>
 						  <td cols="3">
 								<select id="shenpi" size="1" name="jobInfo.confirmStatus.code" class="string_selectbox_3">
-								<option></option>
+								
 									<!-- add 2020/3/4 by sun -->
 									<c:forEach items="${shenpizhuangtai}" var="t">
 									<option value="${t.code}">${t.name} </option>
@@ -339,8 +393,8 @@
                         </tbody>
                         <tr>
 						  <td width="25%"></td> 
-						  <td width="25%"><br><input type="submit" value="　检 索　" name="B1" class="string" ></td>						  
-                          <td width="25%"><br><input type="reset" value="　清 除　" name="B22" class="string"></td>
+						  <td width="25%"><br><input type="submit" value="　検　索　" name="B1" class="string" ></td>						  
+                          <td width="25%"><br><input type="reset" value="　ク リ ア　" name="B22" class="string"></td>
 						  <td width="25%"></td> 
                         </tr> 
 						 </form>
@@ -367,6 +421,16 @@
     </table> 
 </div> 
 	<script type="text/javascript">
+		$("#mytype").change(function(){
+		 	var type=$("#mytype").find("option:selected").text();
+		 	if(type!='BP'){
+		 		$("#mycompany").hide();
+		 	}else{
+		 		$("#mycompany").show();
+		 	}
+			   
+		});
+	
 		$("input[type='submit']").click(function(){
 			//检测所有条件是否全部为空
 			var allEmpty = true;
